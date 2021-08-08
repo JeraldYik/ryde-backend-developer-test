@@ -1,0 +1,40 @@
+{
+  "name": "ryde-backend-developer-test",
+  "version": "1.0.0",
+  "description": "Backend Developer test for Ryde (in Typescript)",
+  "author": "Jerald Yik <jeraldyik12@gmail.com>",
+  "main": "dist",
+  "scripts": {
+    "build": "tsc --project './tsconfig.json'",
+    "dev": "tsc --project './tsconfig.json' --watch & NODE_ENV=development nodemon dist",
+    "start": "docker-compose up",
+    "cli:db": "docker exec -it ryde-backend-developer-test_mongo_1 mongo",
+    "test:unit": "mocha -r ts-node/register test/unit/*.test.ts --exit",
+    "test:functional": "mocha -r ts-node/register test/functional/*.test.ts",
+    "prettier:fix": "npx prettier --write ."
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.12.1",
+    "mongoose": "^5.13.5",
+    "ts-node": "^10.1.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.21",
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
+    "@types/mocha": "^9.0.0",
+    "@types/mongodb": "^3.6.20",
+    "@types/node": "^16.4.11",
+    "chai": "^4.3.4",
+    "mocha": "^9.0.3",
+    "supertest": "^6.1.4",
+    "tslint": "^6.1.3",
+    "typescript": "^4.3.5"
+  },
+  "license": "ISC"
+}
